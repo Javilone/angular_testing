@@ -21,6 +21,7 @@ td {
 /* Estilos para las imágenes dentro de las celdas */
 img {
   max-width: 50px; /* Ajusta el tamaño máximo de las imágenes */
+  height: 50px; /* Ajusta el tamaño máximo de las imágenes */
   border-radius: 50%; /* Borde redondeado para las imágenes */
 }
 

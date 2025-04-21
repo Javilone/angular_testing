@@ -54,6 +54,7 @@
     <tbody>
       <tr
         *ngFor="let member of members | searchByLogin : search.value"
+        (click)="select(member)"
         appHighlight
       >
         <td>
@@ -70,4 +71,45 @@
   </table>
 </div>
 
-<!-- {{ members }} -->
+<!-- <div>
+  <h2>Datos de XXXXX</h2>
+  <form [formGroup]="editForm">
+    <div>
+      <label>Id</label>
+    </div>
+    <div>
+      <label>Name</label>
+      <input name="name" formControlName="login" />
+      <div *ngIf="loginControl.invalid">
+        <div *ngIf="loginControl.errors?.['required']">
+          El nombre es obligatorio
+        </div>
+        <div *ngIf="loginControl.errors?.['minlength']">
+          El nombre debe tener
+          {{loginControl.errors?.['minlength'].requiredLength }} caracteres.
+          Tiene solamente
+          {{loginControl.errors?.['minlength'].actualLength }} caracteres
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>Avatar</label>
+      <input
+        name="avatar"
+        type="file"
+        (change)="handleFileInput($event)"
+        accept="image/*"
+      />
+      <div>
+        <img [src]="avatarControl.value" width="50" height="50" />
+      </div>
+    </div>
+    <button [disabled]="editForm.invalid" (click)="save()">Actualizar</button>
+  </form>
+</div>
+--->
+
+<app-user-edit
+  [member]="memberSelected"
+  (updatedMemberEvent)="updatedMember($event)"
+></app-user-edit>
