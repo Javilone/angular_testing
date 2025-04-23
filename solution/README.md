@@ -61,9 +61,10 @@ class Component {
 
 - Templeate - Motor de validaciones es HTML5
   - required, min, max, ...
-- Reactive - Motor de validaciones es Angular
+- Reactive - Motor de validaciones provisto por Angular
 
-  - Mucho más potentes que los de tipo template
+  - Permite validaciones personalizadas
+  - Soporte a validaciones asíncronas
 
 - ngModel
 
@@ -94,3 +95,10 @@ class SalaryReport {
   getSalaryByRole(role: string) {}
 }
 ```
+
+## Routing
+
+- Definimos diccionario de rutas para que el servicio Router las pueda usar.
+- 'router-outlet' directiva donde el router intectará nuestros componentes.
+- 'routerLink' permite hace navegación desde el template.
+- 'routerLinkActive' 
